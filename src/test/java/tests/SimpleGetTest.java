@@ -1,9 +1,12 @@
 package tests;
 
-import api.methods.Post;
+/**
+ * Created by Клим on 18.10.2018.
+ */
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
+import api.methods.Get;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -17,10 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Клим on 16.10.2018.
- */
-public class SimplePostTest {
+public class SimpleGetTest {
     WebDriver driver;
     @BeforeMethod
     public void setUp() throws Exception {
@@ -33,20 +33,24 @@ public class SimplePostTest {
     public void main() throws IOException {
         String url = "https://api.pdffiller.com/v1/document";
         String token = "VvPROjVXfQJQVe04BPc05DyQe9NpW03F1XhV4UcB";
-        List<NameValuePair> params = new ArrayList<NameValuePair>(3);
-        params.add(new BasicNameValuePair("file", "https://www.irs.gov/pub/irs-pdf/fw9.pdf"));
-        params.add(new BasicNameValuePair("name", "fw9.pdf"));
-        params.add(new BasicNameValuePair("folder_id", "0"));
-        Post.postWithAuth(url,token,params);
+        String responseBody = Get.getWithAuth(url,token);
+        JSONObject obj = new JSONObject(responseBody);
+        JSONArray arr = obj.getJSONArray("items");
+        List<String> apiListOfNames = new ArrayList<String>() ;
+        for(int i = 0; i < arr.length(); i++){
+            String name = arr.getJSONObject(i).getString("name").replaceAll(".pdf","");
+            apiListOfNames.add(name);
+        }
         LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
         FormPage formPage = loginPage.login();
-        String lastAddedDocumentsNameOnWeb = formPage.getLastAddedDocumentsName();
-        Assert.assertTrue(lastAddedDocumentsNameOnWeb.contains("fw9"));
+        List<String> webListOfNames = formPage.getListOfDocuments();
+
+        Assert.assertTrue(webListOfNames.equals(apiListOfNames));
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
-    driver.close();
-
+        driver.close();
     }
 }
