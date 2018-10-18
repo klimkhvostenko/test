@@ -1,13 +1,10 @@
-package api;
+package api.methods;
 
 /**
  * Created by Клим on 17.10.2018.
  */
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;

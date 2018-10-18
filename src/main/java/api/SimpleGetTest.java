@@ -1,8 +1,12 @@
 package api;
 
+import api.methods.GetTest;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
+import web.GetDOcumentsFromWeb;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,18 +19,24 @@ public class SimpleGetTest {
     @Test
     public void main() throws IOException {
         String url = "https://api.pdffiller.com/v1/document";
-        String token = "3acRIpaqeI06eLB3PGassVyCJgYgOARgHbXID0Bq";
+        String token = "VvPROjVXfQJQVe04BPc05DyQe9NpW03F1XhV4UcB";
         String responseBody = GetTest.getWithAuth(url,token);
         JSONObject obj = new JSONObject(responseBody);
         JSONArray arr = obj.getJSONArray("items");
-        List<String> values = new ArrayList<String>() ;
+        List<String> apiListOfNames = new ArrayList<String>() ;
         for(int i = 0; i < arr.length(); i++){
-            String name = arr.getJSONObject(i).getString("name");
-            values.add(name);
+            String name = arr.getJSONObject(i).getString("name").replaceAll(".pdf","");
+            apiListOfNames.add(name);
         }
-//        values.toString();
+
+        GetDOcumentsFromWeb getDOcumentsFromWeb = new GetDOcumentsFromWeb();
+        List<String> webListOfNames = getDOcumentsFromWeb.getListOfDocuments();
+        Assert.assertTrue(webListOfNames.equals(apiListOfNames));
     }
-//    private String getFiles(String response){
-//       List<String> = response.
-//    }
+
+    @After
+    public void tearDown() throws Exception {
+
+
+    }
 }
