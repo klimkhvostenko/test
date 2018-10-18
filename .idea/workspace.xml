@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7ed5867-3a84-40df-971e-8da0e7ff4f83" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/api/methods/PostTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/web/GetDOcumentsFromWeb.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/api/PostTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/api/GetTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/api/PostTest.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/api/SimpleGetTest.class" afterPath="$PROJECT_DIR$/target/classes/api/SimpleGetTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/api/SimplePostTest.class" afterPath="$PROJECT_DIR$/target/classes/api/SimplePostTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/SimpleGetTest.java" afterPath="$PROJECT_DIR$/src/main/java/api/SimpleGetTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/SimplePostTest.java" afterPath="$PROJECT_DIR$/src/main/java/api/SimplePostTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/api/GetTest.java" afterPath="$PROJECT_DIR$/src/main/java/api/methods/GetTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/GetDOcumentsFromWeb.java" afterPath="$PROJECT_DIR$/src/main/java/web/GetDOcumentsFromWeb.java" />
     </list>
     <ignored path="test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,11 +86,11 @@
       <file leaf-file-name="GetDOcumentsFromWeb.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/GetDOcumentsFromWeb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+            <state relative-caret-position="272">
+              <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1825#1833#0" expanded="true" />
+                <element signature="e#1831#1839#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,9 +125,9 @@
         <option value="$PROJECT_DIR$/src/main/java/web/FormPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/SimpleGetTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/SimplePostTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/web/GetDOcumentsFromWeb.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/methods/GetTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/methods/PostTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/web/GetDOcumentsFromWeb.java" />
       </list>
     </option>
   </component>
@@ -713,9 +702,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SimpleGetTest - 2018.10.18 at 02h 48m 27s.xml">
-      <configuration name="SimpleGetTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SimpleGetTest - 2018.10.18 at 02h 48m 56s.xml">
       <configuration name="SimpleGetTest" configurationId="JUnit" />
     </history-entry>
@@ -741,6 +727,9 @@
       <configuration name="SimplePostTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SimplePostTest - 2018.10.18 at 03h 25m 05s.xml">
+      <configuration name="SimplePostTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimplePostTest - 2018.10.18 at 03h 30m 54s.xml">
       <configuration name="SimplePostTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -997,11 +986,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/GetDOcumentsFromWeb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        <state relative-caret-position="272">
+          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1825#1833#0" expanded="true" />
+            <element signature="e#1831#1839#0" expanded="true" />
           </folding>
         </state>
       </provider>
