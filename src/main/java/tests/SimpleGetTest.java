@@ -43,7 +43,7 @@ WebDriver driver;
         }
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
-        FormPage formPage = ;
+        FormPage formPage = loginPage.login();
         List<String> webListOfNames = formPage.getListOfDocuments();
 
         Assert.assertTrue(webListOfNames.equals(apiListOfNames));
@@ -51,7 +51,6 @@ WebDriver driver;
 
     @AfterMethod
     public void tearDown() throws Exception {
-
-
+        driver.close();
     }
 }

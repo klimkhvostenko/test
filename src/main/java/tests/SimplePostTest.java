@@ -11,6 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import web.FormPage;
+import web.LoginPage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,14 +38,15 @@ public class SimplePostTest {
         params.add(new BasicNameValuePair("name", "fw9.pdf"));
         params.add(new BasicNameValuePair("folder_id", "0"));
         Post.postWithAuth(url,token,params);
-        FormPage formPage = new FormPage();
+        LoginPage loginPage = new LoginPage(driver);
+        FormPage formPage = loginPage.login();
         String lastAddedDocumentsNameOnWeb = formPage.getLastAddedDocumentsName();
         Assert.assertTrue(lastAddedDocumentsNameOnWeb.contains("fw9"));
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
-
+    driver.close();
 
     }
 }

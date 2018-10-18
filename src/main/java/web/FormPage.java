@@ -16,6 +16,12 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
  */
 public class FormPage {
     WebDriver driver;
+
+    public FormPage(WebDriver driver) {
+        this.driver = driver;
+
+    }
+
     public FormPage open(){
         driver.get("https://www.pdffiller.com/en/forms.htm");
         return this;
@@ -53,7 +59,6 @@ public class FormPage {
         wait.until(visibilityOfElementLocated(By.cssSelector(".md-doc__name")));
         WebElement lastAddedDocumentsNameInForm = driver.findElement(By.cssSelector(".md-doc__name"));
         String lastAddedDocumentsName = lastAddedDocumentsNameInForm.getText();
-        driver.close();
         return lastAddedDocumentsName;
     }
 }

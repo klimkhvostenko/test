@@ -3,7 +3,6 @@ package web;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 
 /**
@@ -12,7 +11,7 @@ import org.testng.Assert;
 public class LoginPage {
     WebDriver driver;
 
-    LoginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
 
     }
@@ -22,10 +21,8 @@ public class LoginPage {
         return this;
     }
 
-    private void login() {
-//        System.setProperty("webdriver.gecko.driver", "E:\\test3\\test\\geckodriver.exe");
-//        driver = new FirefoxDriver();
-//        driver.get("https://www.pdffiller.com/en/login.htm");
+    public FormPage login() {
+
         open();
         WebElement logIn = driver.findElement(By.id("form-login-email"));
         logIn.sendKeys("testtestpdf@meta.ua");
@@ -34,7 +31,7 @@ public class LoginPage {
         WebElement submit = driver.findElement(By.id("form-login-submit"));
         submit.click();
         Assert.assertTrue(driver.getCurrentUrl().contains("https://www.pdffiller.com/en/forms.htm"));
-//        closePopUp();
+        return new FormPage(driver);
     }
 
 }
