@@ -1,11 +1,9 @@
 package web;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
@@ -16,21 +14,11 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 /**
  * Created by Клим on 17.10.2018.
  */
-public class GetDOcumentsFromWeb {
+public class FormPage {
     WebDriver driver;
-
-    private void login() {
-        System.setProperty("webdriver.gecko.driver", "E:\\test3\\test\\geckodriver.exe");
-        driver = new FirefoxDriver();
-        driver.get("https://www.pdffiller.com/en/login.htm");
-        WebElement logIn = driver.findElement(By.id("form-login-email"));
-        logIn.sendKeys("testtestpdf@meta.ua");
-        WebElement password = driver.findElement(By.id("form-login-password"));
-        password.sendKeys("testtest");
-        WebElement submit = driver.findElement(By.id("form-login-submit"));
-        submit.click();
-        Assert.assertTrue(driver.getCurrentUrl().contains("https://www.pdffiller.com/en/forms.htm"));
-        closePopUp();
+    public FormPage open(){
+        driver.get("https://www.pdffiller.com/en/forms.htm");
+        return this;
     }
 
     private void closePopUp(){
@@ -44,7 +32,7 @@ public class GetDOcumentsFromWeb {
     }
 
     public List<String> getListOfDocuments(){
-        login();
+        closePopUp();
         WebElement myBoxTab = driver.findElement(By.cssSelector(".i.i-mybox-new"));
         myBoxTab.click();
         List<String> values = new ArrayList<String>();
@@ -58,7 +46,7 @@ public class GetDOcumentsFromWeb {
     }
 
     public String getLastAddedDocumentsName(){
-        login();
+        closePopUp();
         WebElement myBoxTab = driver.findElement(By.cssSelector(".i.i-mybox-new"));
         myBoxTab.click();
         WebDriverWait wait = new WebDriverWait(driver, 5);
